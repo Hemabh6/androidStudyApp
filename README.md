@@ -49,6 +49,40 @@ For Android Emulator, use:
 
 - `http://10.0.2.2:5000/`
 
+## Quick Run (Step-by-Step)
+
+### Prerequisites
+
+- .NET 8 SDK (for backend)
+- Android Studio + Android SDK (for app)
+- Java 17+
+
+### 1) Start backend
+
+```bash
+./scripts/run_backend.sh
+```
+
+Backend starts at `http://localhost:5000`.
+
+### 2) Smoke-test backend APIs
+
+In another terminal:
+
+```bash
+./scripts/smoke_test_backend.sh
+```
+
+This performs login using demo credentials and fetches courses.
+
+### 3) Run Android app
+
+- Open `AndroidApp/` in Android Studio.
+- Let Gradle sync.
+- Start emulator and run app.
+
+> API URL is already configured for emulator loopback (`http://10.0.2.2:5000/`).
+
 ## ZIP Delivery
 
 To generate a release ZIP locally (instead of committing binary artifacts):
